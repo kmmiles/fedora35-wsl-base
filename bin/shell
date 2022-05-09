@@ -1,0 +1,7 @@
+#!/bin/bash
+
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck source=/dev/null
+. "$root_dir"/profile.sh
+
+docker run --privileged --user wsl -it --rm "${DOCKER_TAG_NAME:-}" bash

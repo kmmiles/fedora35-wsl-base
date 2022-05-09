@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -ex
+root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# shellcheck source=/dev/null
+. "$root_dir"/profile.sh
+
+docker run \
+  -it \
+  --rm \
+  "$DOCKER_BASE_IMAGE" \
+  bash
